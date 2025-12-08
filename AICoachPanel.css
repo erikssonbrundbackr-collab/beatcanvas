@@ -1,0 +1,284 @@
+/* === KORTET / PANELEN === */
+.ai-coach-card {
+  position: relative;
+  background: radial-gradient(circle at top, #15192c 0%, #050814 55%, #02030a 100%);
+  border-radius: 22px;
+  padding: 20px 22px 18px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+  max-width: 1000px;
+  margin: 28px auto 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 🔵 Glow under panelen – ser ut som lampor under */
+.ai-coach-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 14% -40px 14%;
+  height: 80px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(56, 189, 248, 0.75) 0%,
+    rgba(56, 189, 248, 0.35) 30%,
+    rgba(15, 23, 42, 0.0) 70%
+  );
+  filter: blur(16px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Liten extra glow längst upp bakom headern */
+.ai-coach-card::after {
+  content: "";
+  position: absolute;
+  inset: -40px 25% auto 25%;
+  height: 80px;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.7),
+    rgba(15, 23, 42, 0)
+  );
+  filter: blur(20px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* === HEADER === */
+.ai-coach-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ai-coach-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-coach-icon {
+  font-size: 26px;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.85);
+}
+
+.ai-coach-header h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.ai-coach-subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: rgba(220, 223, 255, 0.8);
+}
+
+/* ”Powered by ChatGPT”-pill */
+.ai-powered-pill {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.9);
+  background: radial-gradient(circle at top left, #1d2740, #020617);
+  font-size: 12px;
+  gap: 6px;
+  white-space: nowrap;
+  box-shadow:
+    0 0 14px rgba(56, 189, 248, 0.9),
+    0 0 40px rgba(8, 47, 73, 0.9);
+}
+
+.ai-powered-pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+}
+
+.ai-powered-pill .label {
+  letter-spacing: 0.02em;
+  color: #e5f0ff;
+}
+
+/* === CHATFÖNSTRET === */
+.ai-chat-box {
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(circle at top left, #020617, #020617 40%, #000 100%);
+  border-radius: 14px;
+  padding: 12px 14px;
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow:
+    inset 0 0 18px rgba(15, 23, 42, 0.95),
+    0 0 24px rgba(15, 23, 42, 0.9);
+  margin-bottom: 12px;
+}
+
+/* Scrollbar lite diskret */
+.ai-chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+.ai-chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ai-chat-box::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 999px;
+}
+
+/* Meddelanden */
+.ai-msg {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ai-msg-label {
+  font-weight: 600;
+  min-width: 30px;
+}
+
+.ai-msg-text {
+  flex: 1;
+}
+
+/* Färger AI / USER */
+.ai-msg.from-user .ai-msg-label {
+  color: #38bdf8;
+}
+.ai-msg.from-user .ai-msg-text {
+  color: #e0f2fe;
+}
+
+.ai-msg.from-ai .ai-msg-label {
+  color: #f97316;
+}
+.ai-msg.from-ai .ai-msg-text {
+  color: #fed7aa;
+}
+
+/* === INPUT-DELEN === */
+.ai-input-area {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ai-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ai-input-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: radial-gradient(circle at top, #020617, #020617 60%, #000 100%);
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.2s ease;
+}
+
+.ai-input-row input::placeholder {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.ai-input-row input:focus {
+  border-color: #38bdf8;
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.6),
+    0 0 18px rgba(56, 189, 248, 0.9);
+  background: radial-gradient(circle at top, #020617, #020617 40%, #020617 100%);
+}
+
+/* Knappen */
+.ai-input-row button {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: white;
+  box-shadow:
+    0 10px 26px rgba(37, 99, 235, 0.8),
+    0 0 18px rgba(56, 189, 248, 0.9);
+  white-space: nowrap;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    opacity 0.12s ease;
+}
+
+.ai-input-row button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 30px rgba(37, 99, 235, 0.95),
+    0 0 26px rgba(56, 189, 248, 1);
+}
+
+.ai-input-row button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.9),
+    0 0 16px rgba(56, 189, 248, 0.9);
+}
+
+.ai-input-row button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Liten hint-text */
+.ai-hint {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+/* === MOBIL === */
+@media (max-width: 768px) {
+  .ai-coach-card {
+    padding: 14px 12px;
+    border-radius: 18px;
+  }
+
+  .ai-coach-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ai-input-row {
+    flex-direction: column;
+  }
+
+  .ai-input-row button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
