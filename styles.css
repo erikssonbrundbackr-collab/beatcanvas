@@ -1,0 +1,90 @@
+:root{
+  --bg:#0f172a;          /* mörk bakgrund */
+  --panel:#111827;
+  --muted:#9ca3af;
+  --text:#e5e7eb;
+  --accent:#22d3ee;      /* cyan */
+  --accent2:#f43f5e;     /* röd */
+  --accent3:#facc15;     /* gul */
+  --card:#0b1220;
+  --border:#1f2937;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 50% -400px, #12213f 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 0 16px 64px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.subtle { color: var(--muted); font-size: 14px; }
+
+.card {
+  background: linear-gradient(180deg, var(--card), #0a1220 60%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+button, .btn {
+  background: #0e1a2f;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover { border-color: #2c3a56; }
+
+button.primary {
+  background: linear-gradient(180deg, #1c2f52, #152443);
+  border-color: #27406d;
+}
+
+.range { width: 220px; }
+
+.drop {
+  border: 2px dashed #2a3a5f;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  transition: .15s ease;
+  color: var(--muted);
+}
+.drop.drag {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.canvasWrap {
+  position: relative;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #0b1220, #0a1426 45%, #0b1220);
+}
+.help { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+.legend { display:flex; gap:16px; color:var(--muted); font-size:13px; }
+.dot { width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:6px; }
+.dot.red { background: var(--accent2); box-shadow: 0 0 10px var(--accent2); }
+.line { width:12px; height:2px; background: var(--accent3); display:inline-block; margin-right:6px; }
