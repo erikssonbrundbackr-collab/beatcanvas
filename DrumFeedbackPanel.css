@@ -1,0 +1,275 @@
+/* === Grundkortet === */
+.df-panel {
+  background: radial-gradient(circle at top left, #1f2937 0%, #020617 70%);
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 26px rgba(59, 130, 246, 0.45);
+  padding: 16px 18px 20px;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header + status */
+.df-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.df-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #bfdbfe;
+}
+
+.df-status {
+  font-size: 12px;
+}
+
+.df-active {
+  color: #4ade80;
+}
+
+.df-scoring {
+  color: #22c55e;
+  font-weight: 600;
+  animation: df-pulse 1.6s ease-in-out infinite;
+}
+
+.df-inactive {
+  color: #94a3b8;
+}
+
+@keyframes df-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Debug-rad (liten, diskret) */
+.df-debug {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* === MIDI-del === */
+.df-midi-setup {
+  margin-top: 6px;
+  padding: 10px 10px 12px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(37, 99, 235, 0.45);
+}
+
+.df-midi-setup h4 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.df-note {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.df-midi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.df-midi-device {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.df-midi-device:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.6);
+}
+
+.df-midi-device.selected {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+  border-color: #93c5fd;
+  color: #f9fafb;
+}
+
+/* === Score === */
+.df-score {
+  margin-top: 12px;
+  padding: 10px 10px 12px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(30, 64, 175, 0.6);
+}
+
+.df-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.df-score-header h4 {
+  margin: 0;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.df-reset {
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.df-reset:hover {
+  background: rgba(148, 163, 184, 0.25);
+  color: #f9fafb;
+}
+
+.df-score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.df-score-item {
+  text-align: center;
+  padding: 5px 4px;
+  border-radius: 8px;
+  font-size: 11px;
+  background: radial-gradient(circle at top, #020617, #020617);
+  border: 1px solid rgba(30, 64, 175, 0.4);
+}
+
+.df-score-item.perfect { border-color: #4ade80; box-shadow: 0 0 10px rgba(74, 222, 128, 0.35); }
+.df-score-item.good    { border-color: #60a5fa; box-shadow: 0 0 10px rgba(96, 165, 250, 0.35); }
+.df-score-item.early   { border-color: #facc15; box-shadow: 0 0 10px rgba(250, 204, 21, 0.35); }
+.df-score-item.late    { border-color: #fb923c; box-shadow: 0 0 10px rgba(251, 146, 60, 0.35); }
+.df-score-item.miss    { border-color: #f87171; box-shadow: 0 0 10px rgba(248, 113, 113, 0.35); }
+
+.df-score-label {
+  display: block;
+  font-size: 9px;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.df-score-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.df-score-item.perfect .df-score-value { color: #4ade80; }
+.df-score-item.good    .df-score-value { color: #60a5fa; }
+.df-score-item.early   .df-score-value { color: #facc15; }
+.df-score-item.late    .df-score-value { color: #fb923c; }
+.df-score-item.miss    .df-score-value { color: #f87171; }
+
+.df-total {
+  text-align: center;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+/* === Senaste träffar === */
+.df-hits {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(30, 64, 175, 0.5);
+}
+
+.df-hits h4 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.df-hits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 130px;
+  overflow-y: auto;
+}
+
+.df-hit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.95);
+  border-left: 3px solid var(--drum-color, #60a5fa);
+  font-size: 11px;
+}
+
+.df-hit-drum {
+  min-width: 70px;
+  color: var(--drum-color, #60a5fa);
+}
+
+.df-hit-acc {
+  flex: 1;
+}
+
+.df-hit-acc.perfect { color: #4ade80; }
+.df-hit-acc.good    { color: #60a5fa; }
+.df-hit-acc.early   { color: #facc15; }
+.df-hit-acc.late    { color: #fb923c; }
+.df-hit-acc.miss    { color: #f87171; }
+
+.df-hit-pts {
+  font-weight: 600;
+  color: #4ade80;
+}
+
+/* Overlay när ett trumslag detekteras */
+.df-detected {
+  position: absolute;
+  inset: auto 50% 12px;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0b1120;
+  background: #fefce8;
+  box-shadow: 0 0 18px rgba(250, 250, 210, 0.7);
+  animation: df-detected-pop 0.28s ease-out forwards;
+}
+
+@keyframes df-detected-pop {
+  0% { opacity: 0; transform: translateX(-50%) translateY(8px) scale(0.9); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+/* Lite responsivt */
+@media (max-width: 1024px) {
+  .df-panel {
+    margin-top: 12px;
+  }
+}

@@ -1,0 +1,212 @@
+/* === Body – nu transparent så videon syns === */
+body {
+  margin: 0;
+  color: #d0d0d0;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* === Videobakgrund === */
+.auth-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.auth-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0; /* ✅ tidigare -2 — nu syns den */
+  transition: transform 1s ease;
+}
+
+/* 🔹 Liten zoom-in effekt på desktop */
+.auth-video:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 Mobil — visa mer av videon och centrera */
+@media (max-width: 768px) {
+  .auth-video {
+    object-fit: contain;
+    transform: scale(1.3);
+    background: black;
+  }
+}
+
+/* === Mörk overlay för bättre kontrast === */
+.auth-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* === Login/Register box === */
+.auth-box {
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 180, 255, 0.1);
+  padding: 45px 55px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+  color: #e5e5e5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(10px);
+  z-index: 2; /* ✅ nu ovanpå overlay och video */
+}
+
+/* === Rubrik === */
+.auth-box h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00e0ff, #0078ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Extra infotekst === */
+.auth-box .info-text,
+.auth-box .auth-subtext {
+  color: #8aa4b8;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* === Input-fält === */
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background: #0f0f0f;
+  color: #f0f0f0;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.auth-box input:focus {
+  border: 1px solid #00aaff;
+  box-shadow: 0 0 10px rgba(0, 160, 255, 0.3);
+}
+
+/* === Knapp === */
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #009dff, #0066ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.auth-box button:hover {
+  background: linear-gradient(90deg, #00bfff, #007fff);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+}
+
+/* === Länkar och text under === */
+.auth-box p {
+  margin-top: 20px;
+  color: #a8b3c1;
+  font-size: 0.9rem;
+}
+
+.auth-box a {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-box a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsiv design === */
+@media (max-width: 480px) {
+  .auth-box {
+    width: 90%;
+    padding: 35px 25px;
+    background: rgba(10, 10, 10, 0.9);
+  }
+
+  .auth-box h1 {
+    font-size: 1.8rem;
+  }
+}
+/* === Mobil – mindre ruta & bättre proportioner === */
+@media (max-width: 768px) {
+  .auth-video {
+    object-fit: cover;
+    transform: none;
+    background: none;
+  }
+
+  .auth-box {
+    width: 75%;             /* 🔹 ännu mindre (var 85%) */
+    padding: 22px 18px;     /* 🔹 mindre inre marginal */
+    border-radius: 12px;
+  }
+
+  .auth-box h1 {
+    font-size: 1.4rem;      /* 🔹 mindre rubrik */
+    margin-bottom: 8px;
+  }
+
+  .auth-box .auth-subtext {
+    font-size: 0.8rem;      /* 🔹 mindre text */
+    margin-bottom: 15px;
+  }
+
+  .auth-box input {
+    padding: 9px;           /* 🔹 mindre inputfält */
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .auth-box button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .auth-box p {
+    font-size: 0.8rem;
+    margin-top: 15px;
+  }
+}
+.google-button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #ffffff;
+  color: #333;
+}

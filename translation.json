@@ -1,0 +1,60 @@
+{
+  "hero_title": "BeatTrainer",
+  "hero_subtitle": "Learn. Play. Feel.",
+  "hero_description": "Framtidens plattform för musikinlärning — där teknik möter känsla. Träna rytm, tajming och musikalitet genom interaktiv visualisering i realtid.",
+  "login": "Logga in",
+  "register": "Registrera dig",
+
+  "rotate_title": "Vänd mobilen",
+  "rotate_text": "Vi rekommenderar att du vänder skärmen till liggande läge för bästa upplevelse. Använd gärna dator, surfplatta eller casta till TV för bästa känsla.",
+  "understand": "Jag förstår",
+
+  "welcome_title": "Välkommen till DrumVisualizer",
+  "welcome_text_1": "Vill du bli nya Ringo Starr eller kanske Ferrer? Okej, vi ska inte överdriva – men låt oss säga att du kan bli mycket bättre genom vår hemsida.",
+  "welcome_text_2": "Vi är inte bara en app; vårt mål är att skapa nästa stora community för trummisar att samlas på.",
+  "welcome_text_3": "Vi utvecklar vår app 24/7 och förbättrar den konstant för att hjälpa dig bli den bästa versionen av din rytmkänsla.",
+  "try_free": "Prova gratis",
+
+  "feature_1_title": "Lär dig att spela trummor",
+  "feature_1_desc": "Upptäck ett helt nytt sätt att lära dig trummor – interaktivt, visuellt och kul.",
+  "feature_2_title": "Imponera på andra",
+  "feature_2_desc": "Lär dig spela dina favoritlåtar med känsla och precision. Från nybörjare till mästare.",
+  "feature_3_title": "Bli en del av communityn",
+  "feature_3_desc": "Dela dina framsteg, tävla i utmaningar och inspireras av andra trummisar världen över.",
+
+  "scroll_title": "Vad innehåller vår app?",
+
+  "loop_feature_1": "Träffa andra trummisar",
+  "loop_feature_2": "Utveckla din tajming",
+  "loop_feature_3": "Få roliga utmaningar",
+  "loop_feature_4": "Visa dina framsteg",
+  "loop_feature_5": "Lås upp nya låtar",
+  "loop_feature_6": "Klättra i topplistor",
+  "loop_feature_7": "Anpassa ditt set",
+  "loop_feature_8": "Diskutera med andra",
+
+  "info_1_title": "🎵 Lär dig spela",
+  "info_1_text": "Lär dig spela olika låtar i olika genrer genom att enkelt följa med och spela som det visas.",
+  "info_2_title": "🚀 Träna smartare, inte hårdare",
+  "info_2_text": "Justera tempo, öva specifika delar och få visuell feedback på din tajming.",
+  "info_3_title": "💬 Snacka med andra trummisar",
+  "info_3_text": "Prata med andra musikälskare, ta hjälp av andra trummisar, ge feedback och delta i vår community.",
+
+  "faq_title": "Vanliga frågor",
+  "faq_1_q": "Vad är det för hemsida?",
+  "faq_1_a": "DrumVisualizer är en interaktiv webbaserad app för trummisar — både nybörjare och erfarna. Här kan du lära dig spela trummor, träna till olika genrer och låtar, samt få AI-feedback på hur du kan förbättra din teknik och rytm. Du kan chatta med andra trummisar, delta i communityn och växa som musiker. Prova gratis i 14 dagar – ingen kortinformation behövs under provperioden!",
+  "faq_2_q": "Hur sker betalning vid abonnemanget?",
+  "faq_2_a": "Vi erbjuder flera säkra betalningsmetoder, bland annat Swish, Klarna, PayPal, kortbetalning och fler alternativ beroende på land.",
+  "faq_3_q": "Uppdateras appen ofta?",
+  "faq_3_a": "Ja! DrumVisualizer är i aktiv utveckling 24/7. Nya funktioner, låtar och förbättringar läggs till löpande varje vecka – du kan alltid förvänta dig något nytt.",
+  "faq_4_q": "Behöver jag kunna spela trummor innan jag börjar?",
+  "faq_4_a": "Nej! DrumVisualizer är byggd för att du ska kunna börja från noll. Appen guidar dig steg för steg med visuella övningar och smart AI-feedback.",
+  "faq_5_q": "Fungerar det på både dator och mobil?",
+  "faq_5_a": "Ja, vår plattform fungerar på dator, surfplatta och mobil. För bästa upplevelse rekommenderar vi att du använder en surfplatta eller dator, men du kan även koppla upp mobilen och casta till en större skärm om du vill få den fulla upplevelsen.",
+  "faq_6_q": "Vad planerar ni framöver?",
+  "faq_6_a": "Vi planerar att lägga till riktiga populära låtar från välkända artister, fler instrument (som gitarr och piano), och bygga en större plattform där musiker kan träffas, skapa band och spela tillsammans online. DrumVisualizer växer snabbt – vårt mål är att bli världens största digitala musikcommunity.",
+
+  "join_us": "Kom med oss 🎶",
+  "final_text": "Gå med i DrumVisualizer och bli en del av världens snabbast växande musik-community. Prova gratis i 14 dagar utan kort eller bindningstid.",
+  "start_now_free": "Börja nu – helt gratis"
+}

@@ -1,0 +1,485 @@
+.pv-root {
+  background: radial-gradient(circle at top, #020617 0, #000000 65%);
+  border-radius: 18px;
+  padding: 16px 18px 18px;
+  color: #e5e7eb;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  max-width: 1180px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- Översta panelen (head) ---------- */
+
+.pv-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 10px;
+  background: linear-gradient(to bottom, #111827, #020617);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 0 1px rgba(31, 41, 55, 0.9),
+    0 12px 24px rgba(0, 0, 0, 0.9);
+}
+
+.pv-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-logo-cube {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6b7280, #1f2937);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.pv-logo-text {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.pv-display {
+  flex: 0 0 170px;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 10px;
+  background: radial-gradient(circle at top, #f9fafb, #d1d5db);
+  color: #111827;
+  font-family: "Courier New", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  box-shadow:
+    inset 0 0 0 1px rgba(148, 163, 184, 0.8),
+    0 4px 12px rgba(15, 23, 42, 1);
+}
+
+.pv-top-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.pv-small-toggle {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease,
+    background 0.1s ease;
+}
+
+.pv-small-toggle.on {
+  border-color: rgba(34, 197, 94, 0.9);
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+}
+
+.pv-small-toggle.off {
+  opacity: 0.7;
+}
+
+.pv-small-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- Låt-rad & transport ---------- */
+
+.pv-songbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 2fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.pv-song-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.pv-song-select label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pv-song-select select {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+.pv-song-meta {
+  font-size: 0.76rem;
+  color: #9ca3af;
+}
+
+.pv-transport {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pv-ctrl-btn {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+}
+
+.pv-ctrl-btn:hover {
+  background: radial-gradient(circle at top, #1f2937, #020617);
+}
+
+.pv-progress {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+}
+
+.pv-time {
+  width: 40px;
+  text-align: center;
+  color: #9ca3af;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Layout ---------- */
+
+.pv-layout {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.pv-note-area {
+  position: relative;
+  flex: 1.6;
+  height: 360px;
+  border-radius: 16px;
+  border: 1px solid rgba(75, 85, 99, 0.9);
+  overflow: hidden;
+  background: linear-gradient(to bottom, #020617, #020617 68%, #000000 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 23, 42, 0.9),
+    0 16px 36px rgba(0, 0, 0, 0.95);
+}
+
+/* Play-area ligger ovanför tangentbordet och klipper noterna */
+.pv-play-area {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 96px; /* samma som keyboard-body höjd */
+  overflow: hidden;
+}
+
+/* bakgrundsraster i play-area */
+.pv-play-area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 41, 55, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to right, rgba(30, 64, 175, 0.4) 1px, transparent 1px);
+  background-size: 100% 20%, 6% 100%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Hit line sitter i botten av play-area (precis ovanför tangenterna) */
+
+.pv-hit-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #22c55e, #0ea5e9);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 1);
+}
+
+/* Not-block */
+
+.pv-note {
+  position: absolute;
+  height: 12%;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #22c55e, #0ea5e9);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.95);
+  transform: translateY(-50%);
+  transition: opacity 0.12s linear;
+}
+
+.pv-note-hit {
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+}
+
+.pv-note-miss {
+  background: linear-gradient(180deg, #f97373, #ef4444);
+}
+
+/* ---------- Keyboard ---------- */
+
+.pv-keyboard-body {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 96px;
+  background: linear-gradient(to bottom, #111827, #020617);
+  box-shadow:
+    0 -18px 40px rgba(0, 0, 0, 1),
+    inset 0 2px 0 rgba(31, 41, 55, 0.9);
+  display: flex;
+  align-items: flex-end;
+  padding: 0 18px 6px;
+}
+
+/* trä-sidor */
+.pv-keyboard-body::before,
+.pv-keyboard-body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 12px;
+  top: 4px;
+  background: linear-gradient(180deg, #3f2a1c, #1f130d);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.8);
+}
+.pv-keyboard-body::before {
+  left: 0;
+}
+.pv-keyboard-body::after {
+  right: 0;
+}
+
+.pv-keyboard {
+  position: relative;
+  flex: 1;
+  height: 80px;
+}
+
+/* Gemensamt */
+
+.pv-key {
+  position: absolute;
+  bottom: 0;
+  border-radius: 6px;
+  transform-origin: bottom;
+  cursor: default;
+  transition:
+    transform 0.05s linear,
+    box-shadow 0.05s linear,
+    background 0.08s ease,
+    filter 0.08s ease;
+}
+
+/* Vita tangenter */
+
+.pv-key-white {
+  background: linear-gradient(to bottom, #ffffff, #e5e7eb);
+  height: 78px;
+  border: 1px solid rgba(15, 23, 42, 0.8);
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.9),
+    inset 0 0 0 1px rgba(156, 163, 175, 0.6);
+}
+
+/* Svarta tangenter */
+
+.pv-key-black {
+  background: linear-gradient(180deg, #020617, #020617);
+  height: 52px;
+  border-radius: 6px;
+  border: 1px solid rgba(15, 23, 42, 1);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 1),
+    inset 0 0 0 1px rgba(31, 41, 55, 0.9);
+  z-index: 3;
+}
+
+/* Auto highlight när blocket nuddar tangenten */
+
+.pv-key-auto {
+  filter: brightness(1.15);
+  box-shadow:
+    0 0 18px rgba(56, 189, 248, 1),
+    0 0 34px rgba(59, 130, 246, 0.9);
+}
+
+/* När användaren trycker tangent via MIDI */
+
+.pv-key-active {
+  transform: translateY(1px) scaleY(0.96);
+  background: radial-gradient(circle at top, #22c55e, #0ea5e9);
+  box-shadow:
+    0 0 24px rgba(34, 197, 94, 1),
+    0 0 40px rgba(74, 222, 128, 0.9);
+}
+
+/* Notnamn under aktiva/auto */
+
+.pv-key-auto::after,
+.pv-key-active::after {
+  content: attr(data-note);
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  color: #e5e7eb;
+  text-shadow: 0 0 6px rgba(15, 23, 42, 1);
+}
+
+/* ---------- Sidebar ---------- */
+
+.pv-sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pv-panel {
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border-radius: 14px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  padding: 10px 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.95);
+}
+
+.pv-panel h3 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.pv-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  padding-block: 2px;
+}
+
+.pv-midi-status {
+  margin: 4px 0;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.pv-hint {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Feedback */
+
+.pv-feedback {
+  margin-top: 4px;
+  border-radius: 14px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  background: rgba(3, 7, 18, 0.98);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 1);
+}
+
+.pv-feedback-good {
+  border-color: rgba(34, 197, 94, 0.95);
+  box-shadow: 0 16px 34px rgba(34, 197, 94, 0.7);
+}
+
+.pv-feedback-bad {
+  border-color: rgba(248, 113, 113, 0.95);
+  box-shadow: 0 16px 34px rgba(248, 113, 113, 0.7);
+}
+
+/* Range */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(31, 41, 55, 0.9);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #22c55e;
+  border: none;
+}
+
+/* ---------- Responsivt ---------- */
+
+@media (max-width: 960px) {
+  .pv-layout {
+    flex-direction: column;
+  }
+  .pv-sidebar {
+    width: 100%;
+    flex-direction: row;
+  }
+  .pv-panel {
+    flex: 1;
+  }
+  .pv-note-area {
+    height: 320px;
+  }
+}
+
+@media (max-width: 720px) {
+  .pv-songbar {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+  .pv-layout {
+    flex-direction: column;
+  }
+  .pv-sidebar {
+    flex-direction: column;
+  }
+}
